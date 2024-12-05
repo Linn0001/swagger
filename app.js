@@ -25,7 +25,6 @@ app.use('/docs/playlist', swaggerUi.serve, swaggerUi.setup(loadSwagger('playlist
 app.use('/docs/comment', swaggerUi.serve, swaggerUi.setup(loadSwagger('comment.yaml')));
 app.use('/docs/artist', swaggerUi.serve, swaggerUi.setup(loadSwagger('artist.yaml')));
 
-// Ruta base para mostrar un mensaje genérico
 app.get('/docs', (req, res) => {
   res.send(`
     <h1>Documentación API</h1>
@@ -42,7 +41,6 @@ app.get('/docs', (req, res) => {
   `);
 });
 
-// Iniciar el servidor
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}/docs`);
